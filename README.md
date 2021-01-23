@@ -1,4 +1,5 @@
 # WakeMeUp
+![Flutter CI](https://github.com/AlexLi0605/WakeMeUp/workflows/Flutter%20CI/badge.svg?branch=master)
 
 A new Flutter project.
 
