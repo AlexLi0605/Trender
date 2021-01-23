@@ -1,4 +1,4 @@
-package com.example.WakeMeUp
+package com.nick.wakemeup
 
 import io.flutter.embedding.android.FlutterActivity
 
