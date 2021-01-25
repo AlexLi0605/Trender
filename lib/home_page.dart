@@ -1,5 +1,5 @@
-import 'package:WakeMeUp/pages/alarm_page.dart';
-import 'package:WakeMeUp/pages/clock_page.dart';
+import 'package:WhatIsNew/pages/alarm_page.dart';
+import 'package:WhatIsNew/pages/clock_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
