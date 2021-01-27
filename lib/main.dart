@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:WhatIsNew/assets/constants.dart' as C;
 
 import 'home_page.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const HomePage(title: 'What Is New'),
+      home: const HomePage(title: C.HOME_PAGE_TITLE),
       debugShowCheckedModeBanner: false,
     );
   }
