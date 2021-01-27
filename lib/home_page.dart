@@ -17,11 +17,32 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
-  static const List<Tab> tabs = <Tab>[
-    Tab(text: C.GOOGLE_TAB_TITLE),
-    Tab(text: C.YOUTUBE_TAB_TITLE),
-    Tab(text: C.TWITTER_TAB_TITLE),
-  ];
+
+  Text get _appBarTitle => Text(
+        widget.title,
+        style: const TextStyle(
+          color: Colors.blue,
+          fontWeight: FontWeight.w900,
+          fontStyle: FontStyle.italic,
+          fontFamily: 'Open Sans',
+          fontSize: 30,
+        ),
+      );
+
+  TabBar get _tabBar => TabBar(
+        unselectedLabelColor: Colors.redAccent,
+        indicatorSize: TabBarIndicatorSize.label,
+        indicator: BoxDecoration(
+          borderRadius: BorderRadius.circular(50),
+          color: Colors.redAccent,
+        ),
+        controller: _tabController,
+        tabs: [
+          _getTab(C.GOOGLE_TAB_TITLE),
+          _getTab(C.YOUTUBE_TAB_TITLE),
+          _getTab(C.TWITTER_TAB_TITLE),
+        ],
+      );
 
   @override
   void initState() {
@@ -33,12 +54,17 @@ class _HomePageState extends State<HomePage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text(widget.title),
-          bottom: TabBar(
-            controller: _tabController,
-            indicatorColor: Colors.white,
-            tabs: tabs,
-          )),
+        title: _appBarTitle,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        bottom: PreferredSize(
+          preferredSize: _tabBar.preferredSize,
+          child: ColoredBox(
+            color: Colors.white,
+            child: _tabBar,
+          ),
+        ),
+      ),
       body: TabBarView(
         controller: _tabController,
         children: <Widget>[
@@ -46,6 +72,20 @@ class _HomePageState extends State<HomePage>
           YoutubeView(),
           TwitterView(),
         ],
+      ),
+    );
+  }
+
+  Tab _getTab(String title) {
+    return Tab(
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(50),
+          border: Border.all(color: Colors.redAccent),
+        ),
+        child: Align(
+          child: Text(title),
+        ),
       ),
     );
   }
