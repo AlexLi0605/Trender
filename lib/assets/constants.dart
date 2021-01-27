@@ -1,3 +1,4 @@
+// Page title
 const String HOME_PAGE_TITLE = "What Is New";
 
 // Tab title
