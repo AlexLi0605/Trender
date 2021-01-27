@@ -1,5 +1,6 @@
-import 'package:WhatIsNew/pages/alarm_page.dart';
-import 'package:WhatIsNew/pages/clock_page.dart';
+import 'package:WhatIsNew/ui/views/google_trend_view.dart';
+import 'package:WhatIsNew/ui/views/twitter_view.dart';
+import 'package:WhatIsNew/ui/views/youtube_view.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,19 +16,15 @@ class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
   static const List<Tab> tabs = <Tab>[
-    Tab(text: "ALARM"),
-    Tab(text: "CLOCK"),
+    Tab(text: "GOOGLE"),
+    Tab(text: "YOUTUBE"),
+    Tab(text: "TWITTER"),
   ];
-  bool showFab = true;
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(vsync: this, length: 2);
-    _tabController.addListener(() {
-      showFab = _tabController.index == 0;
-      setState(() {});
-    });
+    _tabController = TabController(vsync: this, length: 3);
   }
 
   @override
@@ -43,18 +40,11 @@ class _HomePageState extends State<HomePage>
       body: TabBarView(
         controller: _tabController,
         children: <Widget>[
-          AlarmPage(),
-          ClockPage(),
+          GoogleTrendView(),
+          YoutubeView(),
+          TwitterView(),
         ],
       ),
-      floatingActionButton: showFab
-          ? FloatingActionButton(
-              onPressed: () => debugPrint("Add items"),
-              tooltip: 'Increment',
-              child: const Icon(Icons.add),
-            )
-          : null,
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }

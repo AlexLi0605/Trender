@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class ClockPage extends StatelessWidget {
+class TwitterView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
       child: Text(
-        "This is the clock page",
+        "This is the twitter view",
       ),
     );
   }

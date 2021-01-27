@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class AlarmPage extends StatelessWidget {
+class GoogleTrendView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
       child: Text(
-        "This is the alarm page",
+        "This is the google trend page",
       ),
     );
   }

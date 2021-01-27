@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const HomePage(title: 'HomePage'),
+      home: const HomePage(title: 'What Is New'),
       debugShowCheckedModeBanner: false,
     );
   }
