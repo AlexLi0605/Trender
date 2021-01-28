@@ -4,6 +4,7 @@ import 'package:WhatIsNew/ui/views/youtube_view.dart';
 import 'package:WhatIsNew/assets/constants.dart' as C;
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key key, this.title}) : super(key: key);
@@ -21,21 +22,16 @@ class _HomePageState extends State<HomePage>
   Text get _appBarTitle => Text(
         widget.title,
         style: const TextStyle(
-          color: Colors.blue,
           fontWeight: FontWeight.w900,
           fontStyle: FontStyle.italic,
-          fontFamily: 'Open Sans',
-          fontSize: 30,
+          fontSize: 26,
         ),
       );
 
   TabBar get _tabBar => TabBar(
-        unselectedLabelColor: Colors.redAccent,
-        indicatorSize: TabBarIndicatorSize.label,
-        indicator: BoxDecoration(
-          borderRadius: BorderRadius.circular(50),
-          color: Colors.redAccent,
-        ),
+        unselectedLabelColor: C.TAB_UNSELECTED_COLOR,
+        indicatorSize: TabBarIndicatorSize.tab,
+        indicatorColor: C.TAB_INDICATOR_COLOR,
         controller: _tabController,
         tabs: [
           _getTab(C.GOOGLE_TAB_TITLE),
@@ -56,13 +52,9 @@ class _HomePageState extends State<HomePage>
       appBar: AppBar(
         title: _appBarTitle,
         elevation: 0,
-        backgroundColor: Colors.transparent,
         bottom: PreferredSize(
           preferredSize: _tabBar.preferredSize,
-          child: ColoredBox(
-            color: Colors.white,
-            child: _tabBar,
-          ),
+          child: _tabBar,
         ),
       ),
       body: TabBarView(
@@ -78,13 +70,10 @@ class _HomePageState extends State<HomePage>
 
   Tab _getTab(String title) {
     return Tab(
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50),
-          border: Border.all(color: Colors.redAccent),
-        ),
-        child: Align(
-          child: Text(title),
+      child: Align(
+        child: Text(
+          title,
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
         ),
       ),
     );
