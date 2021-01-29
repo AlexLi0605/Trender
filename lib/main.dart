@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:WhatIsNew/assets/constants.dart' as C;
+import 'package:WhatIsNew/assets/constants.dart' as c;
 import 'package:google_fonts/google_fonts.dart';
 
 import 'home_page.dart';
@@ -14,11 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Wake Me Up',
       theme: ThemeData(
-        primaryColor: C.PRIMARY_COLOR,
+        primaryColor: c.primaryColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         textTheme: GoogleFonts.openSansTextTheme(),
       ),
-      home: const HomePage(title: C.HOME_PAGE_TITLE),
+      home: const HomePage(title: c.homePageTitle),
       debugShowCheckedModeBanner: false,
     );
   }

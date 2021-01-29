@@ -1,5 +1,5 @@
 import 'package:WhatIsNew/core/models/trend_entry.dart';
-import 'package:WhatIsNew/assets/constants.dart' as C;
+import 'package:WhatIsNew/assets/constants.dart' as c;
 import 'package:flutter/material.dart';
 
 class GoogleTrendView extends StatefulWidget {
@@ -40,12 +40,10 @@ class _GoogleTrendViewState extends State<GoogleTrendView> {
           subtitle: Row(
             children: <Widget>[
               Expanded(
-                child: Container(
-                  child: LinearProgressIndicator(
-                    backgroundColor: const Color.fromRGBO(209, 224, 224, 0.2),
-                    value: entry.popularFactor,
-                    valueColor: const AlwaysStoppedAnimation(Colors.green),
-                  ),
+                child: LinearProgressIndicator(
+                  backgroundColor: const Color.fromRGBO(209, 224, 224, 0.2),
+                  value: entry.popularFactor,
+                  valueColor: const AlwaysStoppedAnimation(Colors.green),
                 ),
               ),
             ],
@@ -60,17 +58,17 @@ class _GoogleTrendViewState extends State<GoogleTrendView> {
             decoration: const BoxDecoration(
               border: Border(
                 bottom: BorderSide(
-                  color: C.GOOGLE_TREND_VIEW_CARD_BORDOR_COLOR,
+                  color: c.googleTrendViewCardBorderColor,
                 ),
               ),
-              color: C.GOOGLE_TREND_VIEW_BACKGROUND_COLOR,
+              color: c.googleTrendViewBackgroundColor,
             ),
             child: makeListTile(entry),
           ),
         );
 
     final makeBody = ColoredBox(
-      color: C.GOOGLE_TREND_VIEW_BACKGROUND_COLOR,
+      color: c.googleTrendViewBackgroundColor,
       child: ListView.builder(
         shrinkWrap: true,
         itemCount: trendEntries.length,

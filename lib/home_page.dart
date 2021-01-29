@@ -1,10 +1,9 @@
 import 'package:WhatIsNew/ui/views/google_trend_view.dart';
 import 'package:WhatIsNew/ui/views/twitter_view.dart';
 import 'package:WhatIsNew/ui/views/youtube_view.dart';
-import 'package:WhatIsNew/assets/constants.dart' as C;
+import 'package:WhatIsNew/assets/constants.dart' as c;
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key key, this.title}) : super(key: key);
@@ -29,14 +28,14 @@ class _HomePageState extends State<HomePage>
       );
 
   TabBar get _tabBar => TabBar(
-        unselectedLabelColor: C.TAB_UNSELECTED_COLOR,
+        unselectedLabelColor: c.tabUnselectedColor,
         indicatorSize: TabBarIndicatorSize.tab,
-        indicatorColor: C.TAB_INDICATOR_COLOR,
+        indicatorColor: c.tabIndicatorColor,
         controller: _tabController,
         tabs: [
-          _getTab(C.GOOGLE_TAB_TITLE),
-          _getTab(C.YOUTUBE_TAB_TITLE),
-          _getTab(C.TWITTER_TAB_TITLE),
+          _getTab(c.googleTabTitle),
+          _getTab(c.youtubeTabTitle),
+          _getTab(c.twitterTabTitle),
         ],
       );
 
