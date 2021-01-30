@@ -12,6 +12,11 @@ const TextStyle appBarTitleTextStyle = TextStyle(
   fontSize: 26,
 );
 
+const TextStyle appBarTitleTextStyleWithoutItalic = TextStyle(
+  fontWeight: FontWeight.w900,
+  fontSize: 26,
+);
+
 // Tab title
 const String googleTabTitle = "GOOGLE";
 const String youtubeTabTitle = "YOUTUBE";
@@ -35,6 +40,10 @@ const Color youtubeViewCardBorderColor = Color.fromRGBO(191, 194, 196, 0.3);
 // Twitter View Color
 const Color twitterViewBackgroundColor = Color.fromRGBO(36, 49, 58, 1);
 const Color twitterViewCardBorderColor = Color.fromRGBO(191, 194, 196, 0.3);
+
+// Tweet View Color
+const Color tweetViewBackgroundColor = Color.fromRGBO(36, 49, 58, 1);
+const Color tweetViewCardBorderColor = Color.fromRGBO(191, 194, 196, 0.3);
 
 // Bottom Navigation style
 TextStyle bottomNavigationTextStyle = GoogleFonts.openSans(

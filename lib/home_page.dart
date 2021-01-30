@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ff_navigation_bar/ff_navigation_bar.dart';
 
 import 'package:WhatIsNew/ui/views/setting_view.dart';
-import 'package:WhatIsNew/ui/views/trend_views.dart';
+import 'package:WhatIsNew/ui/views/trend_view.dart';
 import 'package:WhatIsNew/assets/constants.dart' as c;
 
 class HomePage extends StatefulWidget {

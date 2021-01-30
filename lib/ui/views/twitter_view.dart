@@ -1,5 +1,6 @@
 import 'package:WhatIsNew/core/models/topic_entry.dart';
 import 'package:WhatIsNew/assets/constants.dart' as c;
+import 'package:WhatIsNew/ui/views/tweet_view.dart';
 import 'package:flutter/material.dart';
 
 class TwitterView extends StatefulWidget {
@@ -51,6 +52,14 @@ class _TwitterViewState extends State<TwitterView> {
             color: Colors.white,
             size: 30.0,
           ),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => TweetView(title: entry.name),
+              ),
+            );
+          },
         );
 
     Card makeCard(TopicEntry entry) => Card(

@@ -37,21 +37,16 @@ class _YoutubeViewState extends State<YoutubeView> {
             ),
           ),
           subtitle: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              const SizedBox(height: 6),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  entry.channelTitle,
-                  style: const TextStyle(color: Colors.white, fontSize: 14.0),
-                ),
+              const SizedBox(height: 6.0),
+              Text(
+                entry.channelTitle,
+                style: const TextStyle(color: Colors.white, fontSize: 14.0),
               ),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "${entry.viewCounts} views・${entry.publishedAt}",
-                  style: const TextStyle(color: Colors.white, fontSize: 14.0),
-                ),
+              Text(
+                "${entry.viewCounts} views・${entry.publishedAt}",
+                style: const TextStyle(color: Colors.white, fontSize: 14.0),
               ),
             ],
           ),
