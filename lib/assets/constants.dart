@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/material.dart';
 
 // Page title
 const String homePageTitle = "What Is New";
@@ -31,6 +31,10 @@ const Color googleViewCardBorderColor = Color.fromRGBO(191, 194, 196, 0.3);
 // Youtube View Color
 const Color youtubeViewBackgroundColor = Color.fromRGBO(36, 49, 58, 1);
 const Color youtubeViewCardBorderColor = Color.fromRGBO(191, 194, 196, 0.3);
+
+// Twitter View Color
+const Color twitterViewBackgroundColor = Color.fromRGBO(36, 49, 58, 1);
+const Color twitterViewCardBorderColor = Color.fromRGBO(191, 194, 196, 0.3);
 
 // Bottom Navigation style
 TextStyle bottomNavigationTextStyle = GoogleFonts.openSans(
