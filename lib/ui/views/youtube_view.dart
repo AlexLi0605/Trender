@@ -1,4 +1,5 @@
 import 'package:WhatIsNew/assets/constants.dart' as c;
+import 'package:WhatIsNew/assets/fake_data.dart';
 import 'package:WhatIsNew/core/models/youtube_entry.dart';
 import 'package:flutter/material.dart';
 
@@ -82,44 +83,4 @@ class _YoutubeViewState extends State<YoutubeView> {
 
     return makeBody;
   }
-}
-
-List<YoutubeEntry> getYoutubeEntries() {
-  return [
-    YoutubeEntry(
-      title: "Lil Durk - Should've Ducked feat. Pooh Shiesty (Official Audio)",
-      channelTitle: "Lil Durk",
-      thumbnail: "https://i.ytimg.com/vi/8a2ezAX65UM/default.jpg",
-      publishedAt: '20 hours ago',
-      viewCounts: 1469449,
-    ),
-    YoutubeEntry(
-      title: "I'M BUILDING A BETTER BOY",
-      channelTitle: "Danny Gonzalez",
-      thumbnail: "https://i.ytimg.com/vi/3n-gWR0mk6k/default.jpg",
-      publishedAt: '14 minutes ago',
-      viewCounts: 837904,
-    ),
-    YoutubeEntry(
-      title: "If Everything Was Like Among Us 6",
-      channelTitle: "Shiloh & Bros",
-      thumbnail: "https://i.ytimg.com/vi/ZynBkp-4GQ8/default.jpg",
-      publishedAt: '1 day ago',
-      viewCounts: 5639896,
-    ),
-    YoutubeEntry(
-      title: "Selena Gomez, Rauw Alejandro - Baila Conmigo (Official Video)",
-      channelTitle: "SelenaGomezVEVO",
-      thumbnail: "https://i.ytimg.com/vi/h5WN3pkxPF0/default.jpg",
-      publishedAt: '2 days ago',
-      viewCounts: 8656933,
-    ),
-    YoutubeEntry(
-      title: "Can We Turn Resin Pigments Into PAINT?",
-      channelTitle: "EvanAndKatelyn",
-      thumbnail: "https://i.ytimg.com/vi/LfC7tIOfftE/default.jpg",
-      publishedAt: '1 week ago',
-      viewCounts: 4482423,
-    ),
-  ];
 }

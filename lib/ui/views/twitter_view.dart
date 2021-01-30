@@ -1,3 +1,4 @@
+import 'package:WhatIsNew/assets/fake_data.dart';
 import 'package:WhatIsNew/core/models/topic_entry.dart';
 import 'package:WhatIsNew/assets/constants.dart' as c;
 import 'package:WhatIsNew/ui/views/tweet_view.dart';
@@ -90,37 +91,4 @@ class _TwitterViewState extends State<TwitterView> {
 
     return makeBody;
   }
-}
-
-List<TopicEntry> getTopicEntries() {
-  return [
-    TopicEntry(
-      name: "#GiftAGamer",
-      rank: 1,
-    ),
-    TopicEntry(
-      name: "#AskCuppyAnything",
-      rank: 2,
-    ),
-    TopicEntry(
-      name: "#givethanks",
-      rank: 3,
-    ),
-    TopicEntry(
-      name: "#Carrefour",
-      rank: 4,
-    ),
-    TopicEntry(
-      name: "#StreamLifeGoesOn",
-      rank: 5,
-    ),
-    TopicEntry(
-      name: "#STREAM BE PARTY",
-      rank: 6,
-    ),
-    TopicEntry(
-      name: "#TransDayOfRemembrance",
-      rank: 7,
-    ),
-  ];
 }

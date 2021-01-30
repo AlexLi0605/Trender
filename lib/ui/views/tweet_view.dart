@@ -1,3 +1,4 @@
+import 'package:WhatIsNew/assets/fake_data.dart';
 import 'package:WhatIsNew/core/models/tweet_entry.dart';
 import 'package:WhatIsNew/assets/constants.dart' as c;
 import 'package:flutter/material.dart';
@@ -125,49 +126,4 @@ class _TweetViewState extends State<TweetView> {
       body: makeBody,
     );
   }
-}
-
-List<TweetEntry> getTweetEntries() {
-  return [
-    TweetEntry(
-      name: "金井 宣茂",
-      screenName: "Astro_Kanai",
-      profilePhoto:
-          'https://pbs.twimg.com/profile_images/879071738625232901/u0nlrr4Y_normal.jpg',
-      content:
-          "宇宙ステーションでも、日本と9時間の時差で月曜日が始まりました。n今週は6人から3人にクルーのサイズダウンがありますが、しっかりと任されているタスクをこなしたいと思います。nn写真は、NASAの実験施設「ディスティニー」のグローブ…",
-      retweetCount: 226,
-      publishedAt: "1 day ago",
-    ),
-    TweetEntry(
-      name: "NASA's Kennedy Space Center",
-      screenName: "NASAKennedy",
-      profilePhoto:
-          "https://pbs.twimg.com/profile_images/1113501416558141440/csp6nhvI_reasonably_small.png",
-      content:
-          "Congratulations to #Olympics athletes who won gold! Neutron stars like the one at the heart of the Crab Nebula may…",
-      retweetCount: 498,
-      publishedAt: "3 days ago",
-    ),
-    TweetEntry(
-      name: "RobinHood",
-      screenName: "robinhood",
-      profilePhoto:
-          "https://pbs.twimg.com/profile_images/1267616128022351873/dZJpsWTD_reasonably_small.jpg",
-      content:
-          "On behalf of the Worldwide Robin Hood Society, I would just like to thank you all for your support, follows and kind…",
-      retweetCount: 9482,
-      publishedAt: "10 hours ago",
-    ),
-    TweetEntry(
-      name: "medi-tally",
-      screenName: "MediTally",
-      profilePhoto:
-          "https://pbs.twimg.com/profile_images/1349549465317875713/trMgGFyI_reasonably_small.jpg",
-      content:
-          "Remember to ask if Medi Tally is being used the easiest way to Improve & Manage Patient Flow & Saves Valuable Resources.",
-      retweetCount: 132,
-      publishedAt: "4 minutes ago",
-    ),
-  ];
 }

@@ -1,3 +1,4 @@
+import 'package:WhatIsNew/assets/fake_data.dart';
 import 'package:WhatIsNew/core/models/google_entry.dart';
 import 'package:WhatIsNew/assets/constants.dart' as c;
 import 'package:flutter/material.dart';
@@ -80,44 +81,4 @@ class _GoogleViewState extends State<GoogleView> {
 
     return makeBody;
   }
-}
-
-List<GoogleEntry> getGoogleEntries() {
-  return [
-    GoogleEntry(
-      title: "Eriko",
-      rank: 1,
-      popularFactor: 0.9,
-    ),
-    GoogleEntry(
-      title: "Shiro",
-      rank: 2,
-      popularFactor: 0.8,
-    ),
-    GoogleEntry(
-      title: "Ryan",
-      rank: 3,
-      popularFactor: 0.7,
-    ),
-    GoogleEntry(
-      title: "Jamie",
-      rank: 4,
-      popularFactor: 0.6,
-    ),
-    GoogleEntry(
-      title: "Jordan",
-      rank: 5,
-      popularFactor: 0.5,
-    ),
-    GoogleEntry(
-      title: "COVID 19",
-      rank: 6,
-      popularFactor: 0.4,
-    ),
-    GoogleEntry(
-      title: "Trump",
-      rank: 7,
-      popularFactor: 0.3,
-    ),
-  ];
 }
