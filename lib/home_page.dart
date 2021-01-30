@@ -1,10 +1,9 @@
-import 'package:WhatIsNew/ui/views/google_view.dart';
-import 'package:WhatIsNew/ui/views/twitter_view.dart';
-import 'package:WhatIsNew/ui/views/youtube_view.dart';
-import 'package:WhatIsNew/assets/constants.dart' as c;
-
 import 'package:flutter/material.dart';
 import 'package:ff_navigation_bar/ff_navigation_bar.dart';
+
+import 'package:WhatIsNew/ui/views/setting_view.dart';
+import 'package:WhatIsNew/ui/views/trend_views.dart';
+import 'package:WhatIsNew/assets/constants.dart' as c;
 
 class HomePage extends StatefulWidget {
   const HomePage({Key key, this.title}) : super(key: key);
@@ -17,29 +16,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
-  TabController _tabController;
-  int selectedIndex = 0;
-
-  Text get _appBarTitle => Text(
-        widget.title,
-        style: const TextStyle(
-          fontWeight: FontWeight.w900,
-          fontStyle: FontStyle.italic,
-          fontSize: 26,
-        ),
-      );
-
-  TabBar get _tabBar => TabBar(
-        unselectedLabelColor: c.tabUnselectedColor,
-        indicatorSize: TabBarIndicatorSize.tab,
-        indicatorColor: c.tabIndicatorColor,
-        controller: _tabController,
-        tabs: [
-          _getTab(c.googleTabTitle),
-          _getTab(c.youtubeTabTitle),
-          _getTab(c.twitterTabTitle),
-        ],
-      );
+  int _selectedIndex = 0;
 
   FFNavigationBar get _navigationBar => FFNavigationBar(
         theme: FFNavigationBarTheme(
@@ -51,10 +28,10 @@ class _HomePageState extends State<HomePage>
           selectedItemTextStyle: c.bottomNavigationTextStyle,
           unselectedItemTextStyle: c.bottomNavigationTextStyle,
         ),
-        selectedIndex: selectedIndex,
+        selectedIndex: _selectedIndex,
         onSelectTab: (index) {
           setState(() {
-            selectedIndex = index as int;
+            _selectedIndex = index as int;
           });
         },
         items: [
@@ -68,43 +45,21 @@ class _HomePageState extends State<HomePage>
           ),
         ],
       );
-  @override
-  void initState() {
-    super.initState();
-    _tabController = TabController(vsync: this, length: 3);
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: _appBarTitle,
-        elevation: 0,
-        bottom: PreferredSize(
-          preferredSize: _tabBar.preferredSize,
-          child: _tabBar,
+      body: SafeArea(
+        top: false,
+        child: IndexedStack(
+          index: _selectedIndex,
+          children: const <Widget>[
+            TrendView(),
+            SettingView(),
+          ],
         ),
-      ),
-      body: TabBarView(
-        controller: _tabController,
-        children: <Widget>[
-          GoogleView(),
-          YoutubeView(),
-          TwitterView(),
-        ],
       ),
       bottomNavigationBar: _navigationBar,
-    );
-  }
-
-  Tab _getTab(String title) {
-    return Tab(
-      child: Align(
-        child: Text(
-          title,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-        ),
-      ),
     );
   }
 }

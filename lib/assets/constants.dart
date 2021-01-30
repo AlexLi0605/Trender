@@ -3,6 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 
 // Page title
 const String homePageTitle = "What Is New";
+const String trendViewTitle = "Trending";
+
+// AppBar style
+const TextStyle appBarTitleTextStyle = TextStyle(
+  fontWeight: FontWeight.w900,
+  fontStyle: FontStyle.italic,
+  fontSize: 26,
+);
 
 // Tab title
 const String googleTabTitle = "GOOGLE";
