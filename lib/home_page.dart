@@ -1,10 +1,9 @@
-import 'package:WhatIsNew/ui/views/google_trend_view.dart';
+import 'package:WhatIsNew/ui/views/google_view.dart';
 import 'package:WhatIsNew/ui/views/twitter_view.dart';
 import 'package:WhatIsNew/ui/views/youtube_view.dart';
 import 'package:WhatIsNew/assets/constants.dart' as c;
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:ff_navigation_bar/ff_navigation_bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -89,7 +88,7 @@ class _HomePageState extends State<HomePage>
       body: TabBarView(
         controller: _tabController,
         children: <Widget>[
-          GoogleTrendView(),
+          GoogleView(),
           YoutubeView(),
           TwitterView(),
         ],

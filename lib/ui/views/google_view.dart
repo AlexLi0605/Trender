@@ -1,24 +1,24 @@
-import 'package:WhatIsNew/core/models/trend_entry.dart';
+import 'package:WhatIsNew/core/models/google_entry.dart';
 import 'package:WhatIsNew/assets/constants.dart' as c;
 import 'package:flutter/material.dart';
 
-class GoogleTrendView extends StatefulWidget {
+class GoogleView extends StatefulWidget {
   @override
-  _GoogleTrendViewState createState() => _GoogleTrendViewState();
+  _GoogleViewState createState() => _GoogleViewState();
 }
 
-class _GoogleTrendViewState extends State<GoogleTrendView> {
-  List<TrendEntry> trendEntries;
+class _GoogleViewState extends State<GoogleView> {
+  List<GoogleEntry> entries;
 
   @override
   void initState() {
-    trendEntries = getTrendEntries();
+    entries = getGoogleEntries();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    ListTile makeListTile(TrendEntry entry) => ListTile(
+    ListTile makeListTile(GoogleEntry entry) => ListTile(
           contentPadding:
               const EdgeInsets.symmetric(horizontal: 20.0, vertical: 6.0),
           leading: Container(
@@ -52,28 +52,28 @@ class _GoogleTrendViewState extends State<GoogleTrendView> {
               color: Colors.white, size: 30.0),
         );
 
-    Card makeCard(TrendEntry entry) => Card(
+    Card makeCard(GoogleEntry entry) => Card(
           margin: const EdgeInsets.symmetric(),
           child: Container(
             decoration: const BoxDecoration(
               border: Border(
                 bottom: BorderSide(
-                  color: c.googleTrendViewCardBorderColor,
+                  color: c.googleViewCardBorderColor,
                 ),
               ),
-              color: c.googleTrendViewBackgroundColor,
+              color: c.googleViewBackgroundColor,
             ),
             child: makeListTile(entry),
           ),
         );
 
     final makeBody = ColoredBox(
-      color: c.googleTrendViewBackgroundColor,
+      color: c.googleViewBackgroundColor,
       child: ListView.builder(
         shrinkWrap: true,
-        itemCount: trendEntries.length,
+        itemCount: entries.length,
         itemBuilder: (BuildContext context, int index) {
-          return makeCard(trendEntries[index]);
+          return makeCard(entries[index]);
         },
       ),
     );
@@ -82,39 +82,39 @@ class _GoogleTrendViewState extends State<GoogleTrendView> {
   }
 }
 
-List<TrendEntry> getTrendEntries() {
+List<GoogleEntry> getGoogleEntries() {
   return [
-    TrendEntry(
+    GoogleEntry(
       title: "Eriko",
       rank: 1,
       popularFactor: 0.9,
     ),
-    TrendEntry(
+    GoogleEntry(
       title: "Shiro",
       rank: 2,
       popularFactor: 0.8,
     ),
-    TrendEntry(
+    GoogleEntry(
       title: "Ryan",
       rank: 3,
       popularFactor: 0.7,
     ),
-    TrendEntry(
+    GoogleEntry(
       title: "Jamie",
       rank: 4,
       popularFactor: 0.6,
     ),
-    TrendEntry(
+    GoogleEntry(
       title: "Jordan",
       rank: 5,
       popularFactor: 0.5,
     ),
-    TrendEntry(
+    GoogleEntry(
       title: "COVID 19",
       rank: 6,
       popularFactor: 0.4,
     ),
-    TrendEntry(
+    GoogleEntry(
       title: "Trump",
       rank: 7,
       popularFactor: 0.3,
