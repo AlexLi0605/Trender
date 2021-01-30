@@ -18,3 +18,7 @@ const Color tabIndicatorColor = Color.fromRGBO(23, 188, 239, 1);
 // Google Trend View Color
 const Color googleTrendViewBackgroundColor = Color.fromRGBO(36, 49, 58, 1);
 const Color googleTrendViewCardBorderColor = Color.fromRGBO(191, 194, 196, 0.3);
+
+// Youtube View Color
+const Color youtubeViewBackgroundColor = Color.fromRGBO(36, 49, 58, 1);
+const Color youtubeViewCardBorderColor = Color.fromRGBO(191, 194, 196, 0.3);
