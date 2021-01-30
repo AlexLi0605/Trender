@@ -4,6 +4,8 @@ import 'package:WhatIsNew/ui/views/youtube_view.dart';
 import 'package:WhatIsNew/assets/constants.dart' as c;
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:ff_navigation_bar/ff_navigation_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key key, this.title}) : super(key: key);
@@ -17,6 +19,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
+  int selectedIndex = 0;
 
   Text get _appBarTitle => Text(
         widget.title,
@@ -39,6 +42,33 @@ class _HomePageState extends State<HomePage>
         ],
       );
 
+  FFNavigationBar get _navigationBar => FFNavigationBar(
+        theme: FFNavigationBarTheme(
+          barBackgroundColor: c.primaryColor,
+          selectedItemBorderColor: c.primaryColor,
+          selectedItemBackgroundColor: c.primaryColor,
+          selectedItemLabelColor: c.bottomNavigationSelectedItemLabelColor,
+          barHeight: c.bottomNavigationBarHeight,
+          selectedItemTextStyle: c.bottomNavigationTextStyle,
+          unselectedItemTextStyle: c.bottomNavigationTextStyle,
+        ),
+        selectedIndex: selectedIndex,
+        onSelectTab: (index) {
+          setState(() {
+            selectedIndex = index as int;
+          });
+        },
+        items: [
+          FFNavigationBarItem(
+            iconData: Icons.home,
+            label: c.bottomNavigationHomeTitle,
+          ),
+          FFNavigationBarItem(
+            iconData: Icons.settings,
+            label: c.bottomNavigationSettingTitle,
+          ),
+        ],
+      );
   @override
   void initState() {
     super.initState();
@@ -64,6 +94,7 @@ class _HomePageState extends State<HomePage>
           TwitterView(),
         ],
       ),
+      bottomNavigationBar: _navigationBar,
     );
   }
 
