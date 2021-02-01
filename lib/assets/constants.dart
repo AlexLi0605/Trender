@@ -32,14 +32,38 @@ const Color tabIndicatorColor = Color.fromRGBO(23, 188, 239, 1);
 // Google View Color
 const Color googleViewBackgroundColor = Color.fromRGBO(36, 49, 58, 1);
 const Color googleViewCardBorderColor = Color.fromRGBO(191, 194, 196, 0.3);
+const TextStyle googleViewDateTextStyle = TextStyle(
+  color: Colors.white,
+  fontSize: 16.0,
+);
+const TextStyle googleViewRegionTextStyle = TextStyle(
+  color: Colors.white,
+  fontSize: 16.0,
+);
 
 // Youtube View Color
 const Color youtubeViewBackgroundColor = Color.fromRGBO(36, 49, 58, 1);
 const Color youtubeViewCardBorderColor = Color.fromRGBO(191, 194, 196, 0.3);
+const TextStyle youtubeViewDateTextStyle = TextStyle(
+  color: Colors.white,
+  fontSize: 16.0,
+);
+const TextStyle youtubeViewRegionTextStyle = TextStyle(
+  color: Colors.white,
+  fontSize: 16.0,
+);
 
 // Twitter View Color
 const Color twitterViewBackgroundColor = Color.fromRGBO(36, 49, 58, 1);
 const Color twitterViewCardBorderColor = Color.fromRGBO(191, 194, 196, 0.3);
+const TextStyle twitterViewDateTextStyle = TextStyle(
+  color: Colors.white,
+  fontSize: 16.0,
+);
+const TextStyle twitterViewRegionTextStyle = TextStyle(
+  color: Colors.white,
+  fontSize: 16.0,
+);
 
 // Tweet View Color
 const Color tweetViewBackgroundColor = Color.fromRGBO(36, 49, 58, 1);

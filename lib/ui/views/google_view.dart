@@ -68,14 +68,42 @@ class _GoogleViewState extends State<GoogleView> {
           ),
         );
 
-    final makeBody = ColoredBox(
+    final makeBody = Container(
+      padding: const EdgeInsets.only(top: 14.0),
       color: c.googleViewBackgroundColor,
-      child: ListView.builder(
-        shrinkWrap: true,
-        itemCount: entries.length,
-        itemBuilder: (BuildContext context, int index) {
-          return makeCard(entries[index]);
-        },
+      child: Column(
+        children: <Widget>[
+          const SizedBox(height: 4.0),
+          Container(
+            padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const <Widget>[
+                Text("Region: US", style: c.googleViewRegionTextStyle),
+                Text("Date: 2021/2/1", style: c.googleViewRegionTextStyle),
+              ],
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.only(top: 6.0, bottom: 6.0),
+            decoration: const BoxDecoration(
+              border: Border(
+                  bottom: BorderSide(
+                color: Colors.white24,
+                width: 2.0,
+              )),
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: entries.length,
+              itemBuilder: (BuildContext context, int index) {
+                return makeCard(entries[index]);
+              },
+            ),
+          ),
+        ],
       ),
     );
 

@@ -70,14 +70,44 @@ class _YoutubeViewState extends State<YoutubeView> {
           ),
         );
 
-    final makeBody = ColoredBox(
+    final makeBody = Container(
       color: c.youtubeViewBackgroundColor,
-      child: ListView.builder(
-        shrinkWrap: true,
-        itemCount: youtubeEntries.length,
-        itemBuilder: (BuildContext context, int index) {
-          return makeCard(youtubeEntries[index]);
-        },
+      padding: const EdgeInsets.only(top: 14.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: <Widget>[
+          const SizedBox(height: 4.0),
+          Container(
+            padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const <Widget>[
+                Text("Region: US", style: c.twitterViewRegionTextStyle),
+                Text("Category: Life", style: c.twitterViewRegionTextStyle),
+                Text("Date: 2021/2/1", style: c.twitterViewRegionTextStyle),
+              ],
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.only(top: 6.0, bottom: 6.0),
+            decoration: const BoxDecoration(
+              border: Border(
+                  bottom: BorderSide(
+                color: Colors.white24,
+                width: 2.0,
+              )),
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: youtubeEntries.length,
+              itemBuilder: (BuildContext context, int index) {
+                return makeCard(youtubeEntries[index]);
+              },
+            ),
+          ),
+        ],
       ),
     );
 
