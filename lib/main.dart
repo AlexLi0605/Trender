@@ -11,6 +11,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    print('what is new? this is new!');
     return MaterialApp(
       title: 'Wake Me Up',
       theme: ThemeData(
