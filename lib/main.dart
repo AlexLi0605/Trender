@@ -1,8 +1,7 @@
+import 'package:WhatIsNew/ui/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:WhatIsNew/assets/constants.dart' as c;
 import 'package:google_fonts/google_fonts.dart';
-
-import 'home_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         textTheme: GoogleFonts.openSansTextTheme(),
       ),
-      home: const HomePage(title: c.homePageTitle),
+      home: const HomeView(title: c.homePageTitle),
       debugShowCheckedModeBanner: false,
     );
   }

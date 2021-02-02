@@ -5,16 +5,16 @@ import 'package:WhatIsNew/ui/views/setting_view.dart';
 import 'package:WhatIsNew/ui/views/trend_view.dart';
 import 'package:WhatIsNew/assets/constants.dart' as c;
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key key, this.title}) : super(key: key);
+class HomeView extends StatefulWidget {
+  const HomeView({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomeViewState createState() => _HomeViewState();
 }
 
-class _HomePageState extends State<HomePage>
+class _HomeViewState extends State<HomeView>
     with SingleTickerProviderStateMixin {
   int _selectedIndex = 0;
 

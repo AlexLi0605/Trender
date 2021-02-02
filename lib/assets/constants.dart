@@ -2,7 +2,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
 // Page title
-const String homePageTitle = "What Is New";
+const String homeViewTitle = "What Is New";
 const String trendViewTitle = "Trending";
 
 // AppBar style
