@@ -1,7 +1,8 @@
-import 'package:WhatIsNew/assets/fake_data.dart';
 import 'package:WhatIsNew/core/models/tweet_entry.dart';
 import 'package:WhatIsNew/assets/constants.dart' as c;
+import 'package:WhatIsNew/core/models/viewmodels/tweet_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:stacked/stacked.dart';
 
 class TweetView extends StatefulWidget {
   const TweetView({Key key, this.title}) : super(key: key);
@@ -13,17 +14,10 @@ class TweetView extends StatefulWidget {
 }
 
 class _TweetViewState extends State<TweetView> {
-  List<TweetEntry> entries;
-
   Text get _appBarTitle => Text(
         widget.title,
         style: c.appBarTitleTextStyleWithoutItalic,
       );
-  @override
-  void initState() {
-    entries = getTweetEntries();
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -109,21 +103,25 @@ class _TweetViewState extends State<TweetView> {
           ),
         );
 
-    final makeBody = ColoredBox(
-      color: c.tweetViewBackgroundColor,
-      child: ListView.builder(
-        shrinkWrap: true,
-        itemCount: entries.length,
-        itemBuilder: (BuildContext context, int index) {
-          return makeCard(entries[index]);
-        },
-      ),
-    );
+    ColoredBox makeBody(List<TweetEntry> tweets) => ColoredBox(
+          color: c.tweetViewBackgroundColor,
+          child: ListView.builder(
+            shrinkWrap: true,
+            itemCount: tweets.length,
+            itemBuilder: (BuildContext context, int index) {
+              return makeCard(tweets[index]);
+            },
+          ),
+        );
 
-    return Scaffold(
-      backgroundColor: c.tweetViewBackgroundColor,
-      appBar: AppBar(title: _appBarTitle),
-      body: makeBody,
+    return ViewModelBuilder<TweetViewModel>.reactive(
+      viewModelBuilder: () => TweetViewModel(),
+      onModelReady: (model) => model.getTweets(),
+      builder: (content, model, child) => Scaffold(
+        backgroundColor: c.tweetViewBackgroundColor,
+        appBar: AppBar(title: _appBarTitle),
+        body: makeBody(model.tweets ?? []),
+      ),
     );
   }
 }

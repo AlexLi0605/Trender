@@ -78,7 +78,7 @@ List<GoogleEntry> getGoogleEntries() {
   ];
 }
 
-List<TweetEntry> getTweetEntries() {
+Future<List<TweetEntry>> getTweetEntries() async {
   return [
     TweetEntry(
       name: "金井 宣茂",
