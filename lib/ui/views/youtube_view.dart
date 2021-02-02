@@ -1,7 +1,8 @@
+import 'package:flutter/material.dart';
+
 import 'package:WhatIsNew/assets/constants.dart' as c;
 import 'package:WhatIsNew/assets/fake_data.dart';
 import 'package:WhatIsNew/core/models/youtube_entry.dart';
-import 'package:flutter/material.dart';
 
 class YoutubeView extends StatefulWidget {
   @override

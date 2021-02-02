@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
+
 import 'package:WhatIsNew/assets/fake_data.dart';
 import 'package:WhatIsNew/core/models/tweet_entry.dart';
-import 'package:flutter/material.dart';
 
 class TweetViewModel extends ChangeNotifier {
   List<TweetEntry> _tweets;

@@ -1,9 +1,9 @@
+import 'package:flutter/material.dart';
+
+import 'package:WhatIsNew/assets/constants.dart' as c;
 import 'package:WhatIsNew/ui/views/google_view.dart';
 import 'package:WhatIsNew/ui/views/twitter_view.dart';
 import 'package:WhatIsNew/ui/views/youtube_view.dart';
-import 'package:WhatIsNew/assets/constants.dart' as c;
-
-import 'package:flutter/material.dart';
 
 class TrendView extends StatefulWidget {
   const TrendView({Key key}) : super(key: key);

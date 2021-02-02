@@ -1,8 +1,10 @@
-import 'package:WhatIsNew/core/models/tweet_entry.dart';
-import 'package:WhatIsNew/assets/constants.dart' as c;
-import 'package:WhatIsNew/core/models/viewmodels/tweet_view_model.dart';
 import 'package:flutter/material.dart';
+
 import 'package:stacked/stacked.dart';
+
+import 'package:WhatIsNew/assets/constants.dart' as c;
+import 'package:WhatIsNew/core/models/tweet_entry.dart';
+import 'package:WhatIsNew/core/models/viewmodels/tweet_view_model.dart';
 
 class TweetView extends StatefulWidget {
   const TweetView({Key key, this.title}) : super(key: key);

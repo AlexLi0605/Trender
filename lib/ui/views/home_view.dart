@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+
 import 'package:ff_navigation_bar/ff_navigation_bar.dart';
 
+import 'package:WhatIsNew/assets/constants.dart' as c;
 import 'package:WhatIsNew/ui/views/setting_view.dart';
 import 'package:WhatIsNew/ui/views/trend_view.dart';
-import 'package:WhatIsNew/assets/constants.dart' as c;
 
 class HomeView extends StatefulWidget {
   const HomeView({Key key, this.title}) : super(key: key);

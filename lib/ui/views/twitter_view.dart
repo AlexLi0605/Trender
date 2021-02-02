@@ -1,8 +1,9 @@
+import 'package:flutter/material.dart';
+
+import 'package:WhatIsNew/assets/constants.dart' as c;
 import 'package:WhatIsNew/assets/fake_data.dart';
 import 'package:WhatIsNew/core/models/topic_entry.dart';
-import 'package:WhatIsNew/assets/constants.dart' as c;
 import 'package:WhatIsNew/ui/views/tweet_view.dart';
-import 'package:flutter/material.dart';
 
 class TwitterView extends StatefulWidget {
   @override
