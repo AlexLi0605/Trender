@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:WhatIsNew/assets/constants.dart' as c;
 import 'package:google_fonts/google_fonts.dart';
 
+import 'locator.dart';
+
 void main() {
+  setupLocator();
   runApp(MyApp());
 }
 
@@ -17,7 +20,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         textTheme: GoogleFonts.openSansTextTheme(),
       ),
-      home: const HomeView(title: c.homePageTitle),
+      home: const HomeView(title: c.homeViewTitle),
       debugShowCheckedModeBanner: false,
     );
   }
