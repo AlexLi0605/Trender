@@ -1,76 +1,76 @@
 import 'package:WhatIsNew/core/models/data/topic_item_model.dart';
-import 'package:WhatIsNew/core/models/data/trend_item_model.dart';
+import 'package:WhatIsNew/core/models/data/keyword_item_model.dart';
 import 'package:WhatIsNew/core/models/data/tweet_item_model.dart';
 import 'package:WhatIsNew/core/models/data/video_info_item_model.dart';
 
-List<TrendItemModel> getTrendItemModels() {
+List<KeywordItemModel> getKeywordItemModels() {
   return [
-    TrendItemModel(
+    KeywordItemModel(
       title: "Eriko",
       rank: 1,
       popularFactor: 0.9,
     ),
-    TrendItemModel(
+    KeywordItemModel(
       title: "Shiro",
       rank: 2,
       popularFactor: 0.8,
     ),
-    TrendItemModel(
+    KeywordItemModel(
       title: "Ryan",
       rank: 3,
       popularFactor: 0.7,
     ),
-    TrendItemModel(
+    KeywordItemModel(
       title: "Jamie",
       rank: 4,
       popularFactor: 0.6,
     ),
-    TrendItemModel(
+    KeywordItemModel(
       title: "Jordan",
       rank: 5,
       popularFactor: 0.5,
     ),
-    TrendItemModel(
+    KeywordItemModel(
       title: "COVID 19",
       rank: 6,
       popularFactor: 0.4,
     ),
-    TrendItemModel(
+    KeywordItemModel(
       title: "Trump",
       rank: 7,
       popularFactor: 0.3,
     ),
-    TrendItemModel(
+    KeywordItemModel(
       title: "Eriko",
       rank: 8,
       popularFactor: 0.9,
     ),
-    TrendItemModel(
+    KeywordItemModel(
       title: "Shiro",
       rank: 9,
       popularFactor: 0.8,
     ),
-    TrendItemModel(
+    KeywordItemModel(
       title: "Ryan",
       rank: 10,
       popularFactor: 0.7,
     ),
-    TrendItemModel(
+    KeywordItemModel(
       title: "Jamie",
       rank: 11,
       popularFactor: 0.6,
     ),
-    TrendItemModel(
+    KeywordItemModel(
       title: "Jordan",
       rank: 12,
       popularFactor: 0.5,
     ),
-    TrendItemModel(
+    KeywordItemModel(
       title: "COVID 19",
       rank: 13,
       popularFactor: 0.4,
     ),
-    TrendItemModel(
+    KeywordItemModel(
       title: "Trump",
       rank: 14,
       popularFactor: 0.3,
