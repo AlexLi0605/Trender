@@ -163,7 +163,7 @@ Future<List<TweetItemModel>> getTweetItemModels() async {
   ];
 }
 
-List<TopicItemModel> getTopicItemModels() {
+Future<List<TopicItemModel>> getTopicItemModels() async {
   return [
     TopicItemModel(
       name: "#GiftAGamer",
