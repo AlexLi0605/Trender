@@ -224,7 +224,7 @@ Future<List<TopicItemModel>> getTopicItemModels() async {
   ];
 }
 
-List<VideoInfoItemModel> getVideoInfoItemModels() {
+Future<List<VideoInfoItemModel>> getVideoInfoItemModels() async {
   return [
     VideoInfoItemModel(
       title: "Lil Durk - Should've Ducked feat. Pooh Shiesty (Official Audio)",
