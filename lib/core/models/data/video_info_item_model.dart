@@ -1,11 +1,11 @@
-class YoutubeEntry {
+class VideoInfoItemModel {
   String title;
   String channelTitle;
   String thumbnail;
   String publishedAt;
   int viewCounts;
 
-  YoutubeEntry({
+  VideoInfoItemModel({
     this.title,
     this.channelTitle,
     this.thumbnail,

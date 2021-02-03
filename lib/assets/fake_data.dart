@@ -1,76 +1,76 @@
-import 'package:WhatIsNew/core/models/google_entry.dart';
-import 'package:WhatIsNew/core/models/topic_entry.dart';
-import 'package:WhatIsNew/core/models/tweet_entry.dart';
-import 'package:WhatIsNew/core/models/youtube_entry.dart';
+import 'package:WhatIsNew/core/models/data/topic_item_model.dart';
+import 'package:WhatIsNew/core/models/data/trend_item_model.dart';
+import 'package:WhatIsNew/core/models/data/tweet_item_model.dart';
+import 'package:WhatIsNew/core/models/data/video_info_item_model.dart';
 
-List<GoogleEntry> getGoogleEntries() {
+List<TrendItemModel> getTrendItemModels() {
   return [
-    GoogleEntry(
+    TrendItemModel(
       title: "Eriko",
       rank: 1,
       popularFactor: 0.9,
     ),
-    GoogleEntry(
+    TrendItemModel(
       title: "Shiro",
       rank: 2,
       popularFactor: 0.8,
     ),
-    GoogleEntry(
+    TrendItemModel(
       title: "Ryan",
       rank: 3,
       popularFactor: 0.7,
     ),
-    GoogleEntry(
+    TrendItemModel(
       title: "Jamie",
       rank: 4,
       popularFactor: 0.6,
     ),
-    GoogleEntry(
+    TrendItemModel(
       title: "Jordan",
       rank: 5,
       popularFactor: 0.5,
     ),
-    GoogleEntry(
+    TrendItemModel(
       title: "COVID 19",
       rank: 6,
       popularFactor: 0.4,
     ),
-    GoogleEntry(
+    TrendItemModel(
       title: "Trump",
       rank: 7,
       popularFactor: 0.3,
     ),
-    GoogleEntry(
+    TrendItemModel(
       title: "Eriko",
       rank: 8,
       popularFactor: 0.9,
     ),
-    GoogleEntry(
+    TrendItemModel(
       title: "Shiro",
       rank: 9,
       popularFactor: 0.8,
     ),
-    GoogleEntry(
+    TrendItemModel(
       title: "Ryan",
       rank: 10,
       popularFactor: 0.7,
     ),
-    GoogleEntry(
+    TrendItemModel(
       title: "Jamie",
       rank: 11,
       popularFactor: 0.6,
     ),
-    GoogleEntry(
+    TrendItemModel(
       title: "Jordan",
       rank: 12,
       popularFactor: 0.5,
     ),
-    GoogleEntry(
+    TrendItemModel(
       title: "COVID 19",
       rank: 13,
       popularFactor: 0.4,
     ),
-    GoogleEntry(
+    TrendItemModel(
       title: "Trump",
       rank: 14,
       popularFactor: 0.3,
@@ -78,9 +78,9 @@ List<GoogleEntry> getGoogleEntries() {
   ];
 }
 
-Future<List<TweetEntry>> getTweetEntries() async {
+Future<List<TweetItemModel>> getTweetItemModels() async {
   return [
-    TweetEntry(
+    TweetItemModel(
       name: "金井 宣茂",
       screenName: "Astro_Kanai",
       profilePhoto:
@@ -90,7 +90,7 @@ Future<List<TweetEntry>> getTweetEntries() async {
       retweetCount: 226,
       publishedAt: "1 day ago",
     ),
-    TweetEntry(
+    TweetItemModel(
       name: "NASA's Kennedy Space Center",
       screenName: "NASAKennedy",
       profilePhoto:
@@ -100,7 +100,7 @@ Future<List<TweetEntry>> getTweetEntries() async {
       retweetCount: 498,
       publishedAt: "3 days ago",
     ),
-    TweetEntry(
+    TweetItemModel(
       name: "RobinHood",
       screenName: "robinhood",
       profilePhoto:
@@ -110,7 +110,7 @@ Future<List<TweetEntry>> getTweetEntries() async {
       retweetCount: 9482,
       publishedAt: "10 hours ago",
     ),
-    TweetEntry(
+    TweetItemModel(
       name: "medi-tally",
       screenName: "MediTally",
       profilePhoto:
@@ -120,7 +120,7 @@ Future<List<TweetEntry>> getTweetEntries() async {
       retweetCount: 132,
       publishedAt: "4 minutes ago",
     ),
-    TweetEntry(
+    TweetItemModel(
       name: "金井 宣茂",
       screenName: "Astro_Kanai",
       profilePhoto:
@@ -130,7 +130,7 @@ Future<List<TweetEntry>> getTweetEntries() async {
       retweetCount: 226,
       publishedAt: "1 day ago",
     ),
-    TweetEntry(
+    TweetItemModel(
       name: "NASA's Kennedy Space Center",
       screenName: "NASAKennedy",
       profilePhoto:
@@ -140,7 +140,7 @@ Future<List<TweetEntry>> getTweetEntries() async {
       retweetCount: 498,
       publishedAt: "3 days ago",
     ),
-    TweetEntry(
+    TweetItemModel(
       name: "RobinHood",
       screenName: "robinhood",
       profilePhoto:
@@ -150,7 +150,7 @@ Future<List<TweetEntry>> getTweetEntries() async {
       retweetCount: 9482,
       publishedAt: "10 hours ago",
     ),
-    TweetEntry(
+    TweetItemModel(
       name: "medi-tally",
       screenName: "MediTally",
       profilePhoto:
@@ -163,133 +163,133 @@ Future<List<TweetEntry>> getTweetEntries() async {
   ];
 }
 
-List<TopicEntry> getTopicEntries() {
+List<TopicItemModel> getTopicItemModels() {
   return [
-    TopicEntry(
+    TopicItemModel(
       name: "#GiftAGamer",
       rank: 1,
     ),
-    TopicEntry(
+    TopicItemModel(
       name: "#AskCuppyAnything",
       rank: 2,
     ),
-    TopicEntry(
+    TopicItemModel(
       name: "#givethanks",
       rank: 3,
     ),
-    TopicEntry(
+    TopicItemModel(
       name: "#Carrefour",
       rank: 4,
     ),
-    TopicEntry(
+    TopicItemModel(
       name: "#StreamLifeGoesOn",
       rank: 5,
     ),
-    TopicEntry(
+    TopicItemModel(
       name: "#STREAM BE PARTY",
       rank: 6,
     ),
-    TopicEntry(
+    TopicItemModel(
       name: "#TransDayOfRemembrance",
       rank: 7,
     ),
-    TopicEntry(
+    TopicItemModel(
       name: "#GiftAGamer",
       rank: 8,
     ),
-    TopicEntry(
+    TopicItemModel(
       name: "#AskCuppyAnything",
       rank: 9,
     ),
-    TopicEntry(
+    TopicItemModel(
       name: "#givethanks",
       rank: 10,
     ),
-    TopicEntry(
+    TopicItemModel(
       name: "#Carrefour",
       rank: 11,
     ),
-    TopicEntry(
+    TopicItemModel(
       name: "#StreamLifeGoesOn",
       rank: 12,
     ),
-    TopicEntry(
+    TopicItemModel(
       name: "#STREAM BE PARTY",
       rank: 13,
     ),
-    TopicEntry(
+    TopicItemModel(
       name: "#TransDayOfRemembrance",
       rank: 14,
     ),
   ];
 }
 
-List<YoutubeEntry> getYoutubeEntries() {
+List<VideoInfoItemModel> getVideoInfoItemModels() {
   return [
-    YoutubeEntry(
+    VideoInfoItemModel(
       title: "Lil Durk - Should've Ducked feat. Pooh Shiesty (Official Audio)",
       channelTitle: "Lil Durk",
       thumbnail: "https://i.ytimg.com/vi/8a2ezAX65UM/default.jpg",
       publishedAt: '20 hours ago',
       viewCounts: 1469449,
     ),
-    YoutubeEntry(
+    VideoInfoItemModel(
       title: "I'M BUILDING A BETTER BOY",
       channelTitle: "Danny Gonzalez",
       thumbnail: "https://i.ytimg.com/vi/3n-gWR0mk6k/default.jpg",
       publishedAt: '14 minutes ago',
       viewCounts: 837904,
     ),
-    YoutubeEntry(
+    VideoInfoItemModel(
       title: "If Everything Was Like Among Us 6",
       channelTitle: "Shiloh & Bros",
       thumbnail: "https://i.ytimg.com/vi/ZynBkp-4GQ8/default.jpg",
       publishedAt: '1 day ago',
       viewCounts: 5639896,
     ),
-    YoutubeEntry(
+    VideoInfoItemModel(
       title: "Selena Gomez, Rauw Alejandro - Baila Conmigo (Official Video)",
       channelTitle: "SelenaGomezVEVO",
       thumbnail: "https://i.ytimg.com/vi/h5WN3pkxPF0/default.jpg",
       publishedAt: '2 days ago',
       viewCounts: 8656933,
     ),
-    YoutubeEntry(
+    VideoInfoItemModel(
       title: "Can We Turn Resin Pigments Into PAINT?",
       channelTitle: "EvanAndKatelyn",
       thumbnail: "https://i.ytimg.com/vi/LfC7tIOfftE/default.jpg",
       publishedAt: '1 week ago',
       viewCounts: 4482423,
     ),
-    YoutubeEntry(
+    VideoInfoItemModel(
       title: "Lil Durk - Should've Ducked feat. Pooh Shiesty (Official Audio)",
       channelTitle: "Lil Durk",
       thumbnail: "https://i.ytimg.com/vi/8a2ezAX65UM/default.jpg",
       publishedAt: '20 hours ago',
       viewCounts: 1469449,
     ),
-    YoutubeEntry(
+    VideoInfoItemModel(
       title: "I'M BUILDING A BETTER BOY",
       channelTitle: "Danny Gonzalez",
       thumbnail: "https://i.ytimg.com/vi/3n-gWR0mk6k/default.jpg",
       publishedAt: '14 minutes ago',
       viewCounts: 837904,
     ),
-    YoutubeEntry(
+    VideoInfoItemModel(
       title: "If Everything Was Like Among Us 6",
       channelTitle: "Shiloh & Bros",
       thumbnail: "https://i.ytimg.com/vi/ZynBkp-4GQ8/default.jpg",
       publishedAt: '1 day ago',
       viewCounts: 5639896,
     ),
-    YoutubeEntry(
+    VideoInfoItemModel(
       title: "Selena Gomez, Rauw Alejandro - Baila Conmigo (Official Video)",
       channelTitle: "SelenaGomezVEVO",
       thumbnail: "https://i.ytimg.com/vi/h5WN3pkxPF0/default.jpg",
       publishedAt: '2 days ago',
       viewCounts: 8656933,
     ),
-    YoutubeEntry(
+    VideoInfoItemModel(
       title: "Can We Turn Resin Pigments Into PAINT?",
       channelTitle: "EvanAndKatelyn",
       thumbnail: "https://i.ytimg.com/vi/LfC7tIOfftE/default.jpg",

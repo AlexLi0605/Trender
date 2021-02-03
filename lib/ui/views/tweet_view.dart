@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
 import 'package:WhatIsNew/assets/constants.dart' as c;
-import 'package:WhatIsNew/core/models/tweet_entry.dart';
+import 'package:WhatIsNew/core/models/data/tweet_item_model.dart';
 import 'package:WhatIsNew/core/models/viewmodels/tweet_view_model.dart';
 
 class TweetView extends StatefulWidget {
@@ -23,7 +23,7 @@ class _TweetViewState extends State<TweetView> {
 
   @override
   Widget build(BuildContext context) {
-    ListTile makeListTile(TweetEntry entry) => ListTile(
+    ListTile makeListTile(TweetItemModel entry) => ListTile(
           contentPadding: const EdgeInsets.symmetric(
             horizontal: 20.0,
             vertical: 6.0,
@@ -90,7 +90,7 @@ class _TweetViewState extends State<TweetView> {
           ),
         );
 
-    Card makeCard(TweetEntry entry) => Card(
+    Card makeCard(TweetItemModel entry) => Card(
           margin: const EdgeInsets.symmetric(),
           child: Container(
             decoration: const BoxDecoration(
@@ -105,7 +105,7 @@ class _TweetViewState extends State<TweetView> {
           ),
         );
 
-    ColoredBox makeBody(List<TweetEntry> tweets) => ColoredBox(
+    ColoredBox makeBody(List<TweetItemModel> tweets) => ColoredBox(
           color: c.tweetViewBackgroundColor,
           child: ListView.builder(
             shrinkWrap: true,

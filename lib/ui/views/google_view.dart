@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:WhatIsNew/assets/constants.dart' as c;
 import 'package:WhatIsNew/assets/fake_data.dart';
-import 'package:WhatIsNew/core/models/google_entry.dart';
+import 'package:WhatIsNew/core/models/data/trend_item_model.dart';
 
 class GoogleView extends StatefulWidget {
   @override
@@ -10,17 +10,17 @@ class GoogleView extends StatefulWidget {
 }
 
 class _GoogleViewState extends State<GoogleView> {
-  List<GoogleEntry> entries;
+  List<TrendItemModel> entries;
 
   @override
   void initState() {
-    entries = getGoogleEntries();
+    entries = getTrendItemModels();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    ListTile makeListTile(GoogleEntry entry) => ListTile(
+    ListTile makeListTile(TrendItemModel entry) => ListTile(
           contentPadding:
               const EdgeInsets.symmetric(horizontal: 20.0, vertical: 6.0),
           leading: Container(
@@ -54,7 +54,7 @@ class _GoogleViewState extends State<GoogleView> {
               color: Colors.white, size: 30.0),
         );
 
-    Card makeCard(GoogleEntry entry) => Card(
+    Card makeCard(TrendItemModel entry) => Card(
           margin: const EdgeInsets.symmetric(),
           child: Container(
             decoration: const BoxDecoration(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:WhatIsNew/assets/constants.dart' as c;
 import 'package:WhatIsNew/assets/fake_data.dart';
-import 'package:WhatIsNew/core/models/youtube_entry.dart';
+import 'package:WhatIsNew/core/models/data/video_info_item_model.dart';
 
 class YoutubeView extends StatefulWidget {
   @override
@@ -10,17 +10,17 @@ class YoutubeView extends StatefulWidget {
 }
 
 class _YoutubeViewState extends State<YoutubeView> {
-  List<YoutubeEntry> youtubeEntries;
+  List<VideoInfoItemModel> youtubeEntries;
 
   @override
   void initState() {
-    youtubeEntries = getYoutubeEntries();
+    youtubeEntries = getVideoInfoItemModels();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    ListTile makeListTile(YoutubeEntry entry) => ListTile(
+    ListTile makeListTile(VideoInfoItemModel entry) => ListTile(
           contentPadding:
               const EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
           leading: Container(
@@ -56,7 +56,7 @@ class _YoutubeViewState extends State<YoutubeView> {
               color: Colors.white, size: 30.0),
         );
 
-    Card makeCard(YoutubeEntry entry) => Card(
+    Card makeCard(VideoInfoItemModel entry) => Card(
           margin: const EdgeInsets.symmetric(),
           child: Container(
             decoration: const BoxDecoration(

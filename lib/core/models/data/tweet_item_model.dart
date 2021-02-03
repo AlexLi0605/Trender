@@ -1,4 +1,4 @@
-class TweetEntry {
+class TweetItemModel {
   String name;
   String screenName;
   String profilePhoto;
@@ -6,7 +6,7 @@ class TweetEntry {
   int retweetCount;
   String publishedAt;
 
-  TweetEntry({
+  TweetItemModel({
     this.name,
     this.screenName,
     this.profilePhoto,

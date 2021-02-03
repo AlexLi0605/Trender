@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:WhatIsNew/assets/constants.dart' as c;
 import 'package:WhatIsNew/assets/fake_data.dart';
-import 'package:WhatIsNew/core/models/topic_entry.dart';
+import 'package:WhatIsNew/core/models/data/topic_item_model.dart';
 import 'package:WhatIsNew/ui/views/tweet_view.dart';
 
 class TwitterView extends StatefulWidget {
@@ -11,17 +11,17 @@ class TwitterView extends StatefulWidget {
 }
 
 class _TwitterViewState extends State<TwitterView> {
-  List<TopicEntry> entries;
+  List<TopicItemModel> entries;
 
   @override
   void initState() {
-    entries = getTopicEntries();
+    entries = getTopicItemModels();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    ListTile makeListTile(TopicEntry entry) => ListTile(
+    ListTile makeListTile(TopicItemModel entry) => ListTile(
           contentPadding: const EdgeInsets.symmetric(
             horizontal: 20.0,
             vertical: 6.0,
@@ -64,7 +64,7 @@ class _TwitterViewState extends State<TwitterView> {
           },
         );
 
-    Card makeCard(TopicEntry entry) => Card(
+    Card makeCard(TopicItemModel entry) => Card(
           margin: const EdgeInsets.symmetric(),
           child: Container(
             decoration: const BoxDecoration(
