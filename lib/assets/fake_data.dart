@@ -1,9 +1,9 @@
-import 'package:WhatIsNew/core/models/data/topic_item_model.dart';
 import 'package:WhatIsNew/core/models/data/keyword_item_model.dart';
+import 'package:WhatIsNew/core/models/data/topic_item_model.dart';
 import 'package:WhatIsNew/core/models/data/tweet_item_model.dart';
 import 'package:WhatIsNew/core/models/data/video_info_item_model.dart';
 
-List<KeywordItemModel> getKeywordItemModels() {
+Future<List<KeywordItemModel>> getKeywordItemModels() async {
   return [
     KeywordItemModel(
       title: "Eriko",
