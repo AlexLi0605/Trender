@@ -39,9 +39,10 @@ jobs:
 
       - name: Analyze code issues
         run: flutter analyze
-
-      - name: Run tests
-        run: flutter test --coverage
+      
+      # Disable unit test before the prototype is completed
+      # - name: Run tests
+      #   run: flutter test --coverage
 
       - name: Run android build
         run: flutter build appbundle --target-platform android-arm64
