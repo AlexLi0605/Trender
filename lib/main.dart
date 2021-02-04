@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_dotenv/flutter_dotenv.dart' as dot_env;
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:WhatIsNew/assets/constants.dart' as c;
 import 'package:WhatIsNew/ui/views/home_view.dart';
 import 'locator.dart';
 
-void main() {
+Future main() async {
+  await dot_env.load();
   setupLocator();
   runApp(MyApp());
 }
