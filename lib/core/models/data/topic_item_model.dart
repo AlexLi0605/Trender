@@ -1,5 +1,5 @@
 class TopicItemModel {
+  int index;
   String name;
-  int rank;
-  TopicItemModel({this.name, this.rank});
+  TopicItemModel({this.index, this.name});
 }

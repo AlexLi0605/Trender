@@ -80,3 +80,9 @@ const Color bottomNavigationSelectedItemLabelColor = Colors.white;
 const double bottomNavigationBarHeight = 36.0;
 const String bottomNavigationHomeTitle = "Home";
 const String bottomNavigationSettingTitle = "Setting";
+
+// DotEnv
+const String twitterApiKey = "TWITTER_API_KEY";
+const String twitterApiKeySecret = "TWITTER_API_KEY_SECRET";
+const String twitterAccessToken = "TWITTER_ACCESS_TOKEN";
+const String twitterAccessTokenSecret = "TWITTER_ACCESS_TOKEN_SECRET";

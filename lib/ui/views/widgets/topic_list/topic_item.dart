@@ -9,13 +9,13 @@ class TopicItem extends StatelessWidget {
 
   const TopicItem({Key key, this.model}) : super(key: key);
 
-  Container makeLeading(int rank) => Container(
+  Container makeLeading(int index) => Container(
         padding: const EdgeInsets.only(right: 12.0),
         decoration: const BoxDecoration(
           border: Border(right: BorderSide(color: Colors.white24)),
         ),
         child: Text(
-          rank.toString(),
+          index.toString(),
           style: const TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
@@ -43,7 +43,7 @@ class TopicItem extends StatelessWidget {
           horizontal: 20.0,
           vertical: 6.0,
         ),
-        leading: makeLeading(model.rank),
+        leading: makeLeading(model.index),
         title: makeTitleText(model.name),
         trailing: makeTrailing(),
         // onTap: onTapEvent(context, model.name),

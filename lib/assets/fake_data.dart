@@ -1,5 +1,4 @@
 import 'package:WhatIsNew/core/models/data/keyword_item_model.dart';
-import 'package:WhatIsNew/core/models/data/topic_item_model.dart';
 import 'package:WhatIsNew/core/models/data/tweet_item_model.dart';
 import 'package:WhatIsNew/core/models/data/video_info_item_model.dart';
 
@@ -159,67 +158,6 @@ Future<List<TweetItemModel>> getTweetItemModels() async {
           "Remember to ask if Medi Tally is being used the easiest way to Improve & Manage Patient Flow & Saves Valuable Resources.",
       retweetCount: 132,
       publishedAt: "4 minutes ago",
-    ),
-  ];
-}
-
-Future<List<TopicItemModel>> getTopicItemModels() async {
-  return [
-    TopicItemModel(
-      name: "#GiftAGamer",
-      rank: 1,
-    ),
-    TopicItemModel(
-      name: "#AskCuppyAnything",
-      rank: 2,
-    ),
-    TopicItemModel(
-      name: "#givethanks",
-      rank: 3,
-    ),
-    TopicItemModel(
-      name: "#Carrefour",
-      rank: 4,
-    ),
-    TopicItemModel(
-      name: "#StreamLifeGoesOn",
-      rank: 5,
-    ),
-    TopicItemModel(
-      name: "#STREAM BE PARTY",
-      rank: 6,
-    ),
-    TopicItemModel(
-      name: "#TransDayOfRemembrance",
-      rank: 7,
-    ),
-    TopicItemModel(
-      name: "#GiftAGamer",
-      rank: 8,
-    ),
-    TopicItemModel(
-      name: "#AskCuppyAnything",
-      rank: 9,
-    ),
-    TopicItemModel(
-      name: "#givethanks",
-      rank: 10,
-    ),
-    TopicItemModel(
-      name: "#Carrefour",
-      rank: 11,
-    ),
-    TopicItemModel(
-      name: "#StreamLifeGoesOn",
-      rank: 12,
-    ),
-    TopicItemModel(
-      name: "#STREAM BE PARTY",
-      rank: 13,
-    ),
-    TopicItemModel(
-      name: "#TransDayOfRemembrance",
-      rank: 14,
     ),
   ];
 }
