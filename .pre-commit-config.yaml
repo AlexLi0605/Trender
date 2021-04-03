@@ -1,0 +1,28 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: check-json
+      - id: check-xml
+      - id: check-yaml
+      - id: check-added-large-files
+
+  - repo: https://github.com/fluttercommunity/import_sorter
+    rev: "master"
+    hooks:
+      - id: flutter-import-sorter
+
+  - repo: https://github.com/Cretezy/flutter-format-pre-commit
+    rev: "master"
+    hooks:
+      - id: flutter-format
+        files: "lib/.*" # Only format source files
+        exclude: lib/assets/l10n/.*
+
+  - repo: https://github.com/dluksza/flutter-analyze-pre-commit
+    rev: "master"
+    hooks:
+      - id: flutter-analyze
