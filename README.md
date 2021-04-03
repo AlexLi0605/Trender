@@ -25,3 +25,10 @@ Use `python` to install (using a virtual env is recommended).
 pip install pre-commit
 pre-commit install
 ```
+
+## L10n (Optional)
+
+```shell
+// Use this command to generate / update l10n files
+flutter gen-l10n --arb-dir lib/assets/l10n --template-arb-file app_en.arb
+```

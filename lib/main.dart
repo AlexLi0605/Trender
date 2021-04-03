@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:trender/ext.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -26,6 +28,8 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       home: const MyHomePage(title: 'Fucking Hot Reload!!'),
     );
   }
