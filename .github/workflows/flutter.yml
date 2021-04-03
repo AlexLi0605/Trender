@@ -1,0 +1,50 @@
+name: Flutter CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    name: Build and test flutter app
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with:
+          java-version: "12.x"
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: "1.22.5"
+
+      - name: Cache project dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.pub-cache
+          key: ${{ runner.os }}-flutter-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: ${{ runner.os }}-flutter-
+
+      - name: Update project dependencies
+        run: flutter pub get
+
+      - name: Check import order
+        run: flutter pub run import_sorter:main --exit-if-changed
+
+      - name: Check code format
+        run: flutter format --set-exit-if-changed .
+
+      - name: Analyze code issues
+        run: flutter analyze
+
+      - name: Run tests
+        run: flutter test --coverage
+
+      - name: Run android build
+        run: flutter build appbundle --target-platform android-arm64
+
+      - name: Run ios build
+        run: flutter build ios --release --no-codesign
