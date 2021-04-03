@@ -31,6 +31,9 @@ jobs:
       - name: Update project dependencies
         run: flutter pub get
 
+      - name: Download .env file
+        run: touch .env
+
       - name: Check import order
         run: flutter pub run import_sorter:main --exit-if-changed
 
@@ -39,7 +42,7 @@ jobs:
 
       - name: Analyze code issues
         run: flutter analyze
-      
+
       # Disable unit test before the prototype is completed
       # - name: Run tests
       #   run: flutter test --coverage
