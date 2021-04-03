@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
-BorderRadius get cardRadius => BorderRadius.circular(12.0);
+import 'package:trender/assets/font_constants.dart';
 
 ThemeData get appTheme => ThemeData(
       brightness: Brightness.light,
       scaffoldBackgroundColor: Colors.white,
       appBarTheme: appBarTheme,
+      primaryColor: Colors.black,
+      fontFamily: fontQuick,
+      primarySwatch: Colors.amber,
       // This makes the visual density adapt to the platform that you run
       // the app on. For desktop platforms, the controls will be smaller and
       // closer together (more dense) than on mobile platforms.
