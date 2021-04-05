@@ -17,7 +17,10 @@ MaterialPage createGoogleTrendPage() => MaterialPage(
         create: (context) =>
             context.read<AppComponent>().createGoogleTrendViewModel(),
         child: Builder(
-          builder: (context) => GoogleTrendScreen(context.l10n.googleTitle),
+          builder: (context) => GoogleTrendScreen(
+            context,
+            context.l10n.googleTitle,
+          ),
         ),
       ),
       key: const ValueKey(googlePageKey),
@@ -25,9 +28,18 @@ MaterialPage createGoogleTrendPage() => MaterialPage(
     );
 
 class GoogleTrendScreen extends StatelessWidget {
+  final ScrollController _controller = ScrollController();
   final String _title;
 
-  const GoogleTrendScreen(this._title, [Key key]) : super(key: key);
+  GoogleTrendScreen(BuildContext context, this._title, [Key key])
+      : super(key: key) {
+    // TODO(alex): Should not pass context like this way, fix it in the future
+    _controller.addListener(() {
+      if (_controller.position.pixels == _controller.position.maxScrollExtent) {
+        context.read<GoogleTrendViewModel>().fetchDailyTrends();
+      }
+    });
+  }
 
   Widget _createSearchBar(BuildContext context) => Container(
         padding: const EdgeInsets.fromLTRB(12, 8, 0, 8),
@@ -47,52 +59,29 @@ class GoogleTrendScreen extends StatelessWidget {
         ),
       );
 
-  Widget _createRegionChip(BuildContext context) => Badge(
-        padding: const EdgeInsets.fromLTRB(10, 4, 10, 4),
-        toAnimate: false,
-        shape: BadgeShape.square,
-        badgeColor: CustomColors.veryLightPink,
-        borderRadius: BorderRadius.circular(20),
-        elevation: 0,
-        badgeContent: Row(
-          children: [
-            const Icon(CupertinoIcons.location, size: 16),
-            const SizedBox(width: 6),
-            Text(context.l10n.region),
-          ],
-        ),
-      );
-
-  Widget _createApiChip(BuildContext context) => InkWell(
-        onTap: () => context.read<GoogleTrendViewModel>().fetchDailyTrends(),
-        child: Badge(
-          padding: const EdgeInsets.fromLTRB(10, 4, 10, 4),
-          toAnimate: false,
-          shape: BadgeShape.square,
-          badgeColor: CustomColors.veryLightPink,
-          borderRadius: BorderRadius.circular(20),
-          elevation: 0,
-          badgeContent: Row(
-            children: const [
-              Icon(CupertinoIcons.calendar, size: 16),
-              SizedBox(width: 6),
-              Text('API', style: TextStyle(color: Colors.black)),
-            ],
+  Widget _createRegionChip(BuildContext context) => Row(
+        children: [
+          Badge(
+            padding: const EdgeInsets.fromLTRB(10, 6, 10, 6),
+            toAnimate: false,
+            shape: BadgeShape.square,
+            badgeColor: CustomColors.veryLightPink,
+            borderRadius: BorderRadius.circular(20),
+            elevation: 0,
+            badgeContent: Row(
+              children: [
+                const Icon(CupertinoIcons.location, size: 16),
+                const SizedBox(width: 6),
+                Text(context.l10n.region),
+              ],
+            ),
           ),
-        ),
+        ],
       );
 
   Widget _createTitle(BuildContext context) => Text(
         context.l10n.dailyTrends,
         style: const TextStyle(fontSize: 22.0, fontWeight: FontWeight.w600),
-      );
-
-  Widget _createChips(BuildContext context) => Row(
-        children: [
-          _createRegionChip(context),
-          const SizedBox(width: 20),
-          _createApiChip(context),
-        ],
       );
 
   Widget _createDailyTrends(BuildContext context, DailyTrend dailyTrend) {
@@ -117,19 +106,40 @@ class GoogleTrendScreen extends StatelessWidget {
     );
   }
 
-  Widget _createDailyTrendsList(BuildContext context) {
+  Widget _createDailyTrendsList(
+    BuildContext context,
+    ScrollController controller,
+  ) {
     final dailyTrends = context.watch<GoogleTrendViewModel>().dailyTrends;
     return Expanded(
       child: SingleChildScrollView(
+        controller: controller,
         child: SafeArea(
-            child: ListView.builder(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (BuildContext context, int index) {
-            return _createDailyTrends(context, dailyTrends[index]);
-          },
-          itemCount: dailyTrends.length,
-        )),
+          child: ListView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemBuilder: (BuildContext context, int index) {
+              if (index == dailyTrends.length) {
+                return _createLoadingIndicator(context);
+              }
+              return _createDailyTrends(context, dailyTrends[index]);
+            },
+            itemCount: dailyTrends.length + 1,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _createLoadingIndicator(BuildContext context) {
+    final isLoading = context.read<GoogleTrendViewModel>().isLoading();
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Center(
+        child: Opacity(
+          opacity: isLoading ? 1.0 : 00,
+          child: const CircularProgressIndicator(),
+        ),
       ),
     );
   }
@@ -149,9 +159,9 @@ class GoogleTrendScreen extends StatelessWidget {
             const SizedBox(height: 20),
             _createTitle(context),
             const SizedBox(height: 8),
-            _createChips(context),
+            _createRegionChip(context),
             const Divider(color: Colors.black26),
-            _createDailyTrendsList(context),
+            _createDailyTrendsList(context, _controller),
           ],
         ),
       ),

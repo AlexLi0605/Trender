@@ -12,6 +12,7 @@ class GoogleTrendViewModel with ChangeNotifier {
   final NavigationManager _navigationManager;
   final GetDailyTrendsUseCase _getDailyTrendsUseCase;
 
+  GoogleTrendState state = GoogleTrendState.loading;
   List<DailyTrend> dailyTrends = <DailyTrend>[];
 
   GoogleTrendViewModel(
@@ -22,10 +23,16 @@ class GoogleTrendViewModel with ChangeNotifier {
   }
 
   void fetchDailyTrends() {
+    state = GoogleTrendState.loading;
+    notifyListeners();
+
     _getDailyTrendsUseCase('en', -480, 'US', '20210406', 15).then((response) {
       final processedResponse = formatContent(response.dailyTrends);
       dailyTrends.addAll(processedResponse);
+      state = GoogleTrendState.loaded;
       notifyListeners();
+    }).catchError((error) {
+      state = GoogleTrendState.error;
     });
   }
 
@@ -42,4 +49,14 @@ class GoogleTrendViewModel with ChangeNotifier {
       return dailyTrend;
     }).toList();
   }
+
+  bool isLoading() {
+    return state == GoogleTrendState.loading;
+  }
+}
+
+enum GoogleTrendState {
+  loading,
+  loaded,
+  error,
 }
