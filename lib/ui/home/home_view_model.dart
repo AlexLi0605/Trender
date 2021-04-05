@@ -21,6 +21,7 @@ class HomeViewModel with ChangeNotifier {
   void onCardClicked(Menu menu) {
     switch (menu.title) {
       case google:
+        _navigationManager.gotoGooglePage();
         debugPrint('Go to google page');
         break;
       case youtube:

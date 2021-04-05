@@ -1,13 +1,11 @@
-import 'package:flutter/material.dart';
-
 class Menu {
   String title;
-  IconData icon;
+  String iconPath;
   String image;
 
   Menu({
     this.title,
-    this.icon,
+    this.iconPath,
     this.image,
   });
 }

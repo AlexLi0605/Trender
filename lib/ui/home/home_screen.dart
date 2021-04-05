@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
 import 'package:trender/assets/page_constants.dart';
@@ -90,10 +91,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   Widget menuData(Menu menu) => Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Icon(
-            menu.icon,
-            color: Colors.white,
-          ),
+          SvgPicture.asset(menu.iconPath, width: 24, height: 24),
           const SizedBox(height: 10.0),
           Text(
             menu.title,

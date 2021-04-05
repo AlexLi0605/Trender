@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import 'package:trender/ui/google_trend/google_trend_screen.dart';
 import 'package:trender/ui/home/home_screen.dart';
 
 class NavigationManager extends ChangeNotifier {
@@ -28,14 +29,19 @@ class NavigationManager extends ChangeNotifier {
     notifyListeners();
   }
 
+  void replaceAllWith(Page page) {
+    _pages.clear();
+    _pages.add(page);
+    notifyListeners();
+  }
+
   void goToHomePage() {
     _pages.add(createHomePage());
     notifyListeners();
   }
 
-  void replaceAllWith(Page page) {
-    _pages.clear();
-    _pages.add(page);
+  void gotoGooglePage() {
+    _pages.add(createGoogleTrendPage());
     notifyListeners();
   }
 }

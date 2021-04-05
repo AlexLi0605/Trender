@@ -31,6 +31,14 @@ jobs:
       - name: Update project dependencies
         run: flutter pub get
 
+      - name: Create dummy env file
+        run: |
+          touch .env.development
+          echo GOOGLE_TREND_API_ENDPOINT="fake google api endpoint" >> .env.development
+
+      - name: Generate dart files
+        run: ./build_runner.sh
+
       - name: Check import order
         run: flutter pub run import_sorter:main --exit-if-changed
 
