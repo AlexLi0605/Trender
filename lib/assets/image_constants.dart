@@ -1,0 +1,9 @@
+const String imageDir = 'assets/images';
+const String profileImage = '$imageDir/profile.jpg';
+const String loginImage = '$imageDir/login.jpg';
+const String shoppingImage = '$imageDir/shopping.jpeg';
+const String timelineImage = '$imageDir/timeline.jpeg';
+const String icGoogle = '$imageDir/icon_google.svg';
+const String icYoutube = '$imageDir/icon_youtube.svg';
+const String icTwitter = '$imageDir/icon_twitter.svg';
+const String icInstagram = '$imageDir/icon_instagram.svg';

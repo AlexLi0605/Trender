@@ -1,4 +1,16 @@
 {
     "locale": "en",
-    "@locale": {}
+    "@locale": {},
+    "homePageTitle": "Trending Exploer",
+    "@homePageTitle": {},
+    "googleTitle": "Google Trend",
+    "@googleTitle": {},
+    "searchForKeyword": "Search for keyword...",
+    "@searchForKeyword": {},
+    "dailyTrends": "Daily Trends",
+    "@dailyTrends": {},
+    "region": "Region",
+    "@region": {},
+    "searches": "searches",
+    "@searches": {}
 }
